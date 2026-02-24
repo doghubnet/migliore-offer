@@ -1,0 +1,13 @@
+{
+  "name": "Your Name",
+  "email": "you@example.com",
+  "phone": "+1-234-567-890",
+  "address": "Your address line",
+  "social": {
+    "twitter": "",
+    "linkedin": "",
+    "instagram": ""
+  },
+  "sourceStatus": "unreachable",
+  "note": "TODO: replace with real contact details"
+}
