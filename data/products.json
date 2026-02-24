@@ -1,0 +1,56 @@
+[
+  {
+    "id": "offer-basic",
+    "title": "Migliore Reader — Starter",
+    "slug": "migliore-reader-starter",
+    "price_cents": 4999,
+    "price_display": "$49.99",
+    "currency": "usd",
+    "short": "A concise ebook bundle to get started.",
+    "description": "Focused, actionable chapters that teach the foundations. Perfect for new readers who want immediate value and fast results.",
+    "cover": "/assets/covers/migliore-starter.avif",
+    "download_url": "",
+    "bullets": [
+      "Fast-read actionable chapters",
+      "Downloadable workbook & checklist",
+      "Readable in any device",
+      "One-time purchase — lifetime access"
+    ]
+  },
+  {
+    "id": "offer-pro",
+    "title": "Migliore Professional — Pro Pack",
+    "slug": "migliore-professional-pro-pack",
+    "price_cents": 7999,
+    "price_display": "$79.99",
+    "currency": "usd",
+    "short": "Expanded collection + templates.",
+    "description": "Deep-dive strategies, templates, and companion workbooks to accelerate progress. Designed for readers who want to build practical skills.",
+    "cover": "/assets/covers/migliore-pro.avif",
+    "download_url": "",
+    "bullets": [
+      "Step-by-step frameworks",
+      "Editable templates & sample files",
+      "Companion video walkthroughs",
+      "Priority author support (email)"
+    ]
+  },
+  {
+    "id": "offer-premium",
+    "title": "Migliore Masterclass — Premium",
+    "slug": "migliore-masterclass-premium",
+    "price_cents": 13000,
+    "price_display": "$130.00",
+    "currency": "usd",
+    "short": "Full library + premium resources.",
+    "description": "Complete masterclass series, exclusive case studies, and premium downloadable assets — ideal for professionals and teams.",
+    "cover": "/assets/covers/migliore-premium.avif",
+    "download_url": "",
+    "bullets": [
+      "Full masterclass series",
+      "Exclusive case studies & extras",
+      "Premium asset pack (templates, slides)",
+      "Certificate of completion + bonus updates"
+    ]
+  }
+]
