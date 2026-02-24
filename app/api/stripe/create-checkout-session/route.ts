@@ -3,9 +3,9 @@ import { NextResponse } from "next/server";
 import { stripe } from "../../../../lib/stripe";
 
 /**
- * Safe Checkout Session creation route.
- * We deliberately avoid strict Stripe TypeScript currency enums to prevent type mismatches
- * across stripe-node versions in CI builds. Use runtime validation instead.
+ * Create a Stripe Checkout Session (server-side).
+ * Uses a runtime plain-object `params` (typed as `any`) to avoid TypeScript enum mismatches
+ * across stripe-node versions in CI. This keeps runtime behavior correct while preventing build errors.
  */
 export async function POST(req: Request) {
   try {
@@ -16,22 +16,19 @@ export async function POST(req: Request) {
       return new NextResponse(JSON.stringify({ error: "Invalid amount" }), { status: 400 });
     }
 
-    // Accept currency as a string (e.g. "usd"). We do basic runtime normalization to lowercase.
     const currency = (body.currency || "usd").toString().toLowerCase();
-
     const siteUrl = process.env.SITE_URL || "http://localhost:3000";
 
-    // Build params as a plain object (typed as any to avoid strict Stripe type mismatches)
     const params: any = {
       mode: "payment",
       payment_method_types: ["card"],
       line_items: [
         {
           price_data: {
-            currency: currency,
+            currency,
             product_data: {
               name: body.description || "Digital product",
-              // optional: images: body.image ? [body.image] : undefined
+              // images: body.image ? [body.image] : undefined,
             },
             unit_amount: Math.round(amount),
           },
@@ -44,7 +41,6 @@ export async function POST(req: Request) {
     };
 
     const session = await stripe.checkout.sessions.create(params);
-
     return NextResponse.json({ sessionId: session.id });
   } catch (err: any) {
     console.error("create-checkout-session error:", err);

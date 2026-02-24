@@ -6,7 +6,7 @@ const nextConfig = {
     domains: ["images.unsplash.com", "res.cloudinary.com"],
     formats: ["image/avif", "image/webp"],
   },
-  // additional options (rewrites/headers) can be added here
+  // Remove experimental.appDir to avoid invalid-next-config warnings.
 };
 
 module.exports = nextConfig;
